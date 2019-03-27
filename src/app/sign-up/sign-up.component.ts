@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
   email = 'email';
+  songList:string[]=["Alejandro", "Le temps est bon"]
   constructor() { }
 
   ngOnInit() {
