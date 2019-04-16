@@ -1,3 +1,25 @@
-<h1> Create your profile</h1>
-Adresse mail <input type="email">
-Password <input type="password"> 
+<form  (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <div>
+    <label for="contact-order">Email</label>
+    <input name="contact-order" type="email" [(ngModel)]="contact-order" #contact="ngModel" required email>
+  </div>
+  <div *ngIf="myForm.submitted">
+  <div *ngIf="contact.errors">
+    <span *ngIf="contact.errors.required">Le champ est requis</span>
+    <span *ngIf="contact.errors.email">Le champ email est invalide</span>
+  </div>
+</div>
+
+  <div>
+    <label for="user-order">User</label>
+    <input name="user-order" type="text" [(ngModel)]="user-order" #user="ngModel" required minlength="4" maxlength="25">
+  </div>
+  <div *ngIf="myForm.submitted">
+  <div *ngIf="user.errors">
+    <span *ngIf="user.errors.required">Le champ est requis</span>
+    <span *ngIf="user.errors.minlength">Veuillez saisir plus de 4 caracteres</span>
+    <span *ngIf="user.errors.maxlength">Le champ user ne doit pas dépasser 25 caractères</span>
+  </div>
+</div>
+  <button type="submit">Sauvegarder</button>
+</form>
