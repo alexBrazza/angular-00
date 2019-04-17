@@ -1,7 +1,7 @@
 <form  (ngSubmit)="onSubmit()" #myForm="ngForm">
   <div>
     <label for="contact-order">Email</label>
-    <input name="contact-order" type="email" [(ngModel)]="contact-order" #contact="ngModel" required email>
+    <input name="contact-order" type="email" [(ngModel)]="email" #contact="ngModel" required email>
   </div>
   <div *ngIf="myForm.submitted">
   <div *ngIf="contact.errors">
@@ -12,7 +12,7 @@
 
   <div>
     <label for="user-order">User</label>
-    <input name="user-order" type="text" [(ngModel)]="user-order" #user="ngModel" required minlength="4" maxlength="25">
+    <input name="user-order" type="text" [(ngModel)]="user" #User="ngModel" required minlength="4" maxlength="25">
   </div>
   <div *ngIf="myForm.submitted">
   <div *ngIf="user.errors">
